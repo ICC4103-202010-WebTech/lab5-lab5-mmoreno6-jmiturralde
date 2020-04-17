@@ -49,5 +49,13 @@ namespace :db do
     result = Event.joins(ticket_types: [{tickets: [{order: :customer}]}]).where("gender = ?",gender).group("id").limit(1).select(:name).map { |x| x.name }
     puts(result)
     puts("EQQ")
+
+    gender = "m"
+    min_age = 18
+    max_age = 30
+    puts("Query 7: show event most attended by: males between 18 and 30")
+    result = Event.joins(ticket_types: [{tickets: [{order: :customer}]}]).where("gender =? AND age>=? AND age<=?",gender, min_age, max_age).group("id").limit(1).select(:name).map { |x| x.name }
+    puts(result)
+    puts("EQQ")
   end
 end
