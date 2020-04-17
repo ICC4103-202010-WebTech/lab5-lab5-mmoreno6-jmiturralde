@@ -43,5 +43,11 @@ namespace :db do
     result = TicketType.joins(:tickets, :event).where("event_id = ?", event_id).sum("ticket_price")
     puts(result)
     puts("EQQ")
+
+    gender = "f"
+    puts("Query 6: show event most attended by: " + gender)
+    result = Event.joins(ticket_types: [{tickets: [{order: :customer}]}]).where("gender = ?",gender).group("id").limit(1).select(:name).map { |x| x.name }
+    puts(result)
+    puts("EQQ")
   end
 end
