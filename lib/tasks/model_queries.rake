@@ -26,6 +26,12 @@ namespace :db do
     puts(result)
     puts("EQQ")
 
+    customer_id = 8
+    puts("Query 3: show names of attended events by costumer id: " + customer_id.to_s)
+    result =  Event.joins(ticket_types: [{tickets: [{order: :customer}]}]).where("customer_id =?", customer_id).select(:name).distinct.map { |x| x.name }
+    puts(result)
+    puts("EQQ")
+
     event_id = 1
     puts("Query 4: show the total number of tickets sold by event id: " + event_id.to_s)
     result = TicketType.joins(:tickets, :event).where("event_id = ?", event_id).count
