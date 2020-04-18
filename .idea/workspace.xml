@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6fbb1b01-9029-4ad0-ac7b-3fff400f071f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/tasks/model_queries.rake" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tasks/model_queries.rake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +146,9 @@
       <workItem from="1587079804805" duration="377000" />
       <workItem from="1587080197690" duration="1051000" />
       <workItem from="1587081276077" duration="7255000" />
-      <workItem from="1587090926328" duration="1151000" />
+      <workItem from="1587090926328" duration="1202000" />
+      <workItem from="1587166707570" duration="2826000" />
+      <workItem from="1587223568351" duration="442000" />
     </task>
     <servers />
   </component>

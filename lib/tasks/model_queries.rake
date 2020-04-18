@@ -15,14 +15,15 @@ namespace :db do
   task :model_queries => :environment do
     # Sample query: Get the names of the events available and print them out.
     # Always print out a title for your query
-    puts("Query 0: Sample query; show the names of the events available")
-    result = Event.select(:name).distinct.map { |x| x.name }
-    puts(result)
-    puts("EOQ") # End Of Query -- always add this line after a query.
-
     customer_id = 2
     puts("Query 1: show the total number of tickets bought by costumer id: " + customer_id.to_s)
     result =  Customer.joins(:tickets).where("customer_id = ?", customer_id).count
+    puts(result)
+    puts("EQQ")
+
+    customer_id = 8
+    puts("Query 2: show the total number differents events attended by costumer id: " + customer_id.to_s)
+    result =  Event.joins(ticket_types: [{tickets: [{order: :customer}]}]).where("customer_id =?", customer_id).distinct.count
     puts(result)
     puts("EQQ")
 
